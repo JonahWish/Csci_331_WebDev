@@ -1,0 +1,40 @@
+
+body{
+    background-color:#C43363;
+}
+
+h1{
+    font-family:Leelawadee;
+    color: #3433A3;
+    border-style:groove;
+    border-width: 1em;
+    border-color: aqua;
+    font-size: 4em;
+
+}
+
+footer {
+    height : 150px;
+    width: 100%;
+    background-color: #208015;
+    position:absolute;
+    bottom:0;
+}
+
+.door{
+    display:flex;
+    height:100px;
+    width: 60px;
+    position:absolute;
+    bottom:150px;
+    background-color:saddlebrown;
+    justify-content:center;
+    margin-left: 30%;
+}
+.knob{
+    display:flex;
+    align-items:center;
+    position: absolute;
+    margin-left:55%;
+    font-size: 30px;
+}
