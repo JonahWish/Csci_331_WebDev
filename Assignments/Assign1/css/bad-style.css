@@ -1,0 +1,134 @@
+/* THE ULTIMATE GAUDY WEBSITE EXPERIENCE */
+
+body {
+    font-family: "Comic Sans MS", "Arial", sans-serif;
+    background: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00);
+    color: #120052;
+    margin: 30px;
+}
+
+/* BIG ASS HEADER */
+h1 {
+    font-size: 50px;
+    color: #ff0000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #ffff00,
+        #ff00ff,
+        #00ffff,
+        #00ff00
+    );
+
+    border: 8px dashed #0000ff;
+    padding: 20px;
+
+    text-shadow:
+        4px 4px 0 #00ffff,
+        -4px -4px 0 #ffff00,
+        6px 6px 0 #ff00ff;
+
+    box-shadow:
+        10px 10px 0 #ff0000,
+        -10px -10px 0 #00ff00;
+
+    transform: rotate(-1deg);
+}
+
+/* PARAGRAPHS */
+p {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.8;
+    color: #0000ff;
+
+    background-color: #ffff00;
+    border: 5px dotted #ff0000;
+
+    padding: 15px;
+    margin: 25px 0;
+
+    text-shadow: 2px 2px #ff00ff;
+}
+
+/* THE BEAUTIFUL TABLE */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+
+    background-color: #ff00ff;
+
+    border: 10px ridge #00ff00;
+
+    box-shadow:
+        10px 10px 0 #0000ff,
+        -10px -10px 0 #ffff00;
+}
+
+/* CELLS */
+th,
+td {
+    padding: 18px;
+    border: 5px outset #ff0000;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* TABLE HEADER */
+th {
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ffff00
+    );
+
+    color: #0000ff;
+    text-transform: uppercase;
+    font-size: 22px;
+
+    text-shadow: 2px 2px #ffffff;
+}
+
+/* ROWS */
+td {
+    background-color: #00ffff;
+    color: #ff0000;
+}
+
+/* EVEN ROWS BECAUSE CONSISTENCY IS BORING */
+tr:nth-child(even) td {
+    background-color: #00ff00;
+}
+
+/* HOVERING MAKES EVERYTHING WORSE */
+tr:hover td {
+    background-color: #ff6600;
+    color: #ffffff;
+
+    transform: scale(1.05);
+    transition: 0.15s;
+}
+
+/* EXTRA STUPID BUTTON-LIKE LINKS */
+a {
+    color: #ffffff;
+    background-color: #ff0000;
+    padding: 10px 20px;
+    border: 5px outset #ffff00;
+
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #00ff00;
+    color: #ff00ff;
+    border-color: #0000ff;
+}

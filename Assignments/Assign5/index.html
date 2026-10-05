@@ -1,0 +1,163 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Homework Example</h1>
+
+        <div id="example">
+            <h3>Example PHP Form Viewers:</h3>
+            <br>
+            <label for="fv">
+                <em>These are some examples of PHP responses that show results of a form submitted to a server. To see an example of what your form viewer for your homework should do, you can paste a URL into the 'Form Processor' field, then alter the form and 'Submit' (ie: Order Lunch) to see the results. It's not neccessary to include this portion in your homework -- it is just to give you some examples.</em><p></p>
+                <ul>
+                    <li><b onclick="fv.value='form-viewer.php'; handleInput()">form-viewer.php</b> (On the same server as this html file; all that's needed is the relative path) </li>
+                    <li><b onclick="fv.value='https://wp.zybooks.com/form-viewer.php', handleInput()">https://wp.zybooks.com/form-viewer.php</b> (A different server; absolute path must be provided)</li>
+                    <li><b onclick="fv.value='formexample.txt', handleInput()">formexample.txt</b> (The server <em>shows</em> php code as text to get you started on the homework)</li>
+                    <li><b onclick="fv.value='formexample.php', handleInput()">formexample.php</b> (The server <em>runs</em> the code from the previous example)</li>
+                </ul>
+                <input id="fv" type="text" value="form-viewer.php" placeholder="URL of a PHP form viewer. Try your own!">
+            </label>
+            <h3>Send with: <span id="method">GET</span></h3>
+            <div id="getOrPost">
+                <input type="radio" name="send_method" id="get" value="GET" checked=""><label for="get">GET</label>
+                <input type="radio" name="send_method" id="post" value="POST"><label for="post">POST</label>
+            </div>
+        </div>
+
+    <h2>Basic Form Example</h2>
+
+
+
+
+    <p>  <em>Intro Questions</em> </p>
+
+        <form id="exForm" action="form-viewer.php" method="GET">
+        <fieldset>
+            <label for="firstName">First Name:</label> <br>
+            <input type="text" id="firstName" name="firstName" placeholder="e.g. Jonah">
+        </fieldset>
+
+            
+        <fieldset><legend>Favorite Pet vs Sports</legend>
+            
+            <input type="radio" name="pet" id="rb1" value="dog">
+            <label for="rb1">Dog</label><br>
+            
+            <input type="radio" name="pet" id="rb2" value="cat">
+            <label for="rb2">Cat</label><br>
+
+            <input type="radio" name="pet" id="rb3" value="fish">
+            <label for="rb3">Fish</label><br>
+
+            <input type="radio" name="pet" id="rb4" value="reptile">
+            <label for="rb4">Reptile</label><br>
+            
+            <input type="radio" name="pet" id="rb5" value="other">
+            <label for="rb5">Other</label><br>
+
+            <br>
+
+            <input type="checkbox" name="baseball" id="cb1">
+            <label for="cb1">Baseball</label><br>
+            
+            <input type="checkbox" name="basketball" id="cb2">
+            <label for="cb2">Basketball</label><br>
+
+            <input type="checkbox" name="volleyball" id="cb3">
+            <label for="cb3">Volleyball</label><br>
+            
+            <input type="checkbox" name="hockey" id="cb4">
+            <label for="cb4">Hockey</label><br>
+
+            <input type="checkbox" name="soccer" id="cb5">
+            <label for="cb4">Soccer</label><br>
+
+
+
+        </fieldset>
+        <br>
+        <fieldset><legend>Console and Desserts</legend>
+            <label for="console">Console:</label>
+            <select name="console" id="console">
+                <optgroup label="Playstation">
+                    <option value="ps3">PS3</option>
+                    <option value="ps4">PS4</option>
+                </optgroup>
+                <optgroup label="Nintendo">
+                    <option value="switch" selected="">Switch</option>
+                    <option value="wii">wii</option>
+                </optgroup>
+                <optgroup label="Xbox">
+                    <option value="360" selected="">360</option>
+                    <option value="1S">1S</option>
+                </optgroup>
+            </select><br><br>
+
+            <label for="dessert">Dessert:</label>
+            <select name="dessert[]" id="dessert" size="3" multiple>
+                <option value="cake">Cake</option>
+                <option value="icecream">Ice Cream</option>
+                <option value="pie">Pie</option>
+                <option value="brownies">Brownies</option>
+
+            </select><br>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <label for="beans">Beans?</label> <br>
+            <input type="text" id="beans" name="beans" placeholder="other">
+        </fieldset>
+
+        <br>
+        <input type="submit" value="That's Me!">        
+        </form>
+
+
+
+    <script>
+        // get the first (and only) form element; get it's value
+        const form = document.querySelector("form");
+
+        // set GET or POST options
+        const radioButtons = document.querySelectorAll('input[name="send_method"]');
+        const method = document.getElementById("method");
+        let selectedValue;
+        const getOrPost = document.getElementById("getOrPost")
+        getOrPost.addEventListener("click", ()=> {
+            radioButtons.forEach(radioButton => {
+                if (radioButton.checked) {
+                    method.innerHTML = radioButton.value;
+                    form.setAttribute("method", radioButton.value)
+                }
+            })
+        })
+        
+        
+
+        // get the input box element
+        const fvbox = document.getElementById("fv");
+        // on input, evaluate task...
+        fvbox.addEventListener("input", handleInput);
+
+        function handleInput() {
+            // if it's there, change form action to input box string
+            if(fvbox.value != ""){
+                form.setAttribute("action", fvbox.value)
+            }
+            else {
+                fvdefault = "form-viewer.php";
+                form.setAttribute("action", fvdefault);
+            }
+        }
+    </script>
+
+
+
+</body></html>

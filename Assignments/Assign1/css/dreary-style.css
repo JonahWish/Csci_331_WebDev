@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturCook:wght@700&display=swap');
+
+/* WELCOME TO THE VOID */
+
+body {
+    font-family: Georgia, serif;
+    background:
+        radial-gradient(circle at center, #24152b 0%, #0a050c 45%, #000000 100%);
+    color: #d8bfd8;
+    margin: 40px;
+
+    /* subtle haunted nonsense */
+    background-attachment: fixed;
+}
+
+/* THE BIG DRAMATIC HEADER */
+
+h1 {
+    font-family: "UnifrakturCook", "Times New Roman", serif;
+    font-size: 64px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+
+    color: #b30059;
+
+    background: linear-gradient(
+        180deg,
+        #2b0a2f,
+        #080008
+    );
+
+    border: 8px double #8b0052;
+    padding: 25px;
+
+    box-shadow:
+        0 0 10px #ff0080,
+        0 0 30px #8b0052,
+        inset 0 0 25px #000;
+
+    text-shadow:
+        0 0 5px #ff0080,
+        4px 4px 0 #000,
+        -2px -2px 0 #4b0035;
+
+    transform: rotate(-1deg);
+}
+
+/* PARAGRAPHS OF DESPAIR */
+
+p {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.8;
+
+    color: #c8b5c8;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(45, 10, 50, 0.95),
+            rgba(5, 0, 8, 0.98)
+        );
+
+    border-left: 7px solid #8b0052;
+    border-right: 2px solid #3b163d;
+
+    padding: 20px;
+    margin: 30px 0;
+
+    box-shadow:
+        0 0 15px rgba(139, 0, 82, 0.5),
+        inset 0 0 15px #000;
+
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* THE FORBIDDEN TABLE */
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+
+    background-color: #080008;
+
+    border: 10px double #550033;
+
+    box-shadow:
+        0 0 15px #ff0080,
+        0 0 40px #33001f,
+        inset 0 0 30px #000;
+}
+
+/* CELLS OF THE DAMNED */
+
+th,
+td {
+    padding: 18px;
+    text-align: center;
+
+    border: 2px solid #5e174d;
+
+    font-size: 17px;
+}
+
+/* TABLE HEADER FROM THE UNDERWORLD */
+
+th {
+    font-family: "UnifrakturCook", Georgia, serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #3b0033,
+            #11000f
+        );
+
+    color: #ff66b3;
+
+    text-transform: uppercase;
+
+    border: 3px double #b30059;
+
+    text-shadow:
+        0 0 5px #ff0080,
+        2px 2px 0 #000;
+}
+
+/* NORMAL CELLS */
+
+td {
+    background-color: #160b18;
+    color: #c9a8c9;
+
+    transition: all 0.2s ease;
+}
+
+/* EVERY OTHER ROW HAS SEEN THINGS */
+
+tr:nth-child(even) td {
+    background-color: #211022;
+}
+
+/* HOVER INTO THE ABYSS */
+
+tr:hover td {
+    background-color: #3d0732;
+    color: #ff99cc;
+
+    border-color: #ff0080;
+
+    transform: scale(1.03);
+
+    box-shadow:
+        0 0 12px #ff0080;
+
+    text-shadow:
+        0 0 6px #ff0080;
+}
+
+/* LINKS */
+
+a {
+    color: #ff66b3;
+
+    background-color: #12000f;
+
+    border: 2px solid #8b0052;
+
+    padding: 8px 15px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    text-shadow: 0 0 5px #ff0080;
+
+    box-shadow:
+        0 0 8px #550033;
+}
+
+a:hover {
+    color: #ffffff;
+    background-color: #5c003f;
+
+    border-color: #ff66b3;
+
+    box-shadow:
+        0 0 15px #ff0080,
+        0 0 30px #8b0052;
+}
+
+/* BECAUSE NORMAL HORIZONTAL RULES ARE FOR THE LIVING */
+
+hr {
+    border: none;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ff0080,
+        #550033,
+        #ff0080,
+        transparent
+    );
+
+    box-shadow: 0 0 10px #ff0080;
+}
+
+/* SELECTION COLOR BECAUSE EVEN YOUR HIGHLIGHTED TEXT MUST SUFFER */
+
+::selection {
+    background: #ff0080;
+    color: #000;
+}
