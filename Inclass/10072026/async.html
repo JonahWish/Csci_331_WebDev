@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kyle-style.css">
+    <title>Async webdev</title>
+</head>
+<body>
+    <h1 id="header">Asynchronus</h1>
+    <p>Check out the console window</p>
+
+    <p id="update">Check out the console window.</p>
+
+
+    <script>
+        function example(msg){
+            console.log(msg ? msg : "default"); //using ternary operator if/else
+        }
+
+
+        function setnewdata(id, data){
+            const el = document.getElementById(id);
+            el.innerHTML = data;
+        }
+
+        setTimeout(() => {setnewdata("update", "DONE!")}, 3000);
+
+        setTimeout(() => {setnewdata("header", "Check it out!")}, 2000);
+
+        setTimeout(example, 3000);
+        setTimeout(() => {console.log("simple callback"), 500});
+        setTimeout( () => {example("callback calls example()")}, 2000);
+        setTimeout(function () {example("callback calls example() using function keyword")}, 1000)
+        
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+/* WARNING: aesthetically hostile */
+* {
+  cursor: crosshair !important;
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ff00ff 0px,
+      #ff00ff 7px,
+      #00ff00 7px,
+      #00ff00 14px
+    );
+  animation: seizure 0.17s infinite;
+}
+
+body {
+  margin: 0;
+  padding: 37px;
+  font-family: "Comic Sans MS", "Papyrus", cursive;
+  color: #00ffff;
+  background:
+    radial-gradient(circle, #ff0000 10%, transparent 11%),
+    #ffff00;
+  background-size: 23px 23px;
+  transform: rotate(-0.7deg);
+  filter: saturate(500%) contrast(180%);
+}
+
+h1, h2, h3 {
+  color: #ff00ff;
+  background: #00ff00;
+  border: 9px dashed #0000ff;
+  text-shadow:
+    4px 4px #ff0000,
+    -4px -4px #00ffff,
+    8px 2px #000000;
+  transform: rotate(3deg) skew(-8deg);
+  letter-spacing: 11px;
+  text-transform: uppercase;
+  animation: wobble 0.4s infinite alternate;
+}
+
+p {
+  font-family: Papyrus, fantasy;
+  font-size: 21px;
+  line-height: 0.83;
+  text-align: justify;
+  color: #000080;
+  background: #ff69b4;
+  border: 6px ridge orange;
+  padding: 13px;
+  transform: rotate(-2deg);
+}
+
+button {
+  font-family: "Comic Sans MS";
+  font-size: 27px;
+  font-weight: 900;
+  color: yellow;
+  background: red;
+  border: 12px outset lime;
+  border-radius: 0;
+  padding: 4px 29px;
+  box-shadow:
+    15px 15px 0 blue,
+    -11px -7px 0 magenta;
+  animation: buttonHell 0.23s infinite;
+}
+
+input, textarea, select {
+  background: #00ff00;
+  color: #ff0000;
+  border: 8px dotted purple;
+  font-family: "Times New Roman";
+  font-size: 24px;
+  transform: skew(12deg);
+}
+
+a {
+  color: #ff0000;
+  background: cyan;
+  text-decoration: blink;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+img {
+  border: 13px double yellow;
+  filter:
+    hue-rotate(137deg)
+    saturate(700%)
+    contrast(250%);
+  transform: rotate(4deg) scale(1.03);
+}
+
+ul {
+  list-style-type: "💀 ";
+  background: orange;
+  border: 10px groove purple;
+}
+
+li:nth-child(odd) {
+  transform: translateX(31px) rotate(2deg);
+  background: lime;
+}
+
+li:nth-child(even) {
+  transform: translateX(-19px) rotate(-3deg);
+  background: hotpink;
+}
+
+@keyframes wobble {
+  from {
+    transform: rotate(-4deg) skew(8deg);
+  }
+  to {
+    transform: rotate(5deg) skew(-12deg);
+  }
+}
+
+@keyframes buttonHell {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(7deg) scale(1.1); }
+  50%  { transform: rotate(-9deg) scale(.9); }
+  75%  { transform: rotate(4deg) scale(1.2); }
+  100% { transform: rotate(-3deg) scale(.8); }
+}
+
+@keyframes seizure {
+  0%   { background-position: 0 0; }
+  25%  { background-position: 17px -13px; }
+  50%  { background-position: -21px 19px; }
+  75%  { background-position: 13px 7px; }
+  100% { background-position: -9px -17px; }
+}
+/* TABLE OF SUFFERING */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 7px 13px;
+
+  font-family: "Comic Sans MS", Papyrus, cursive;
+  font-size: 19px;
+  color: #0000ff;
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #ff00ff 0px,
+      #ff00ff 12px,
+      #00ffff 12px,
+      #00ffff 24px
+    );
+
+  border: 13px ridge #ff0000;
+  box-shadow:
+    17px 17px 0 #00ff00,
+    -12px -9px 0 #ffff00;
+
+  transform: rotate(-1deg);
+}
+
+/* THE HEADER KNOWS WHAT IT DID */
+
+thead {
+  background: #000;
+  color: #ff00ff;
+}
+
+th {
+  padding: 18px 11px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #ff0000 0px,
+      #ff0000 8px,
+      #ffff00 8px,
+      #ffff00 16px
+    );
+
+  color: #0000ff;
+
+  border: 8px dashed #00ff00;
+
+  font-family: Impact, "Comic Sans MS", fantasy;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+
+  text-shadow:
+    3px 3px #00ffff,
+    -3px -3px #ff00ff;
+
+  transform: rotate(2deg) skewX(-7deg);
+}
+
+/* CELLS ARE NO LONGER FRIENDS */
+
+td {
+  padding: 14px;
+
+  background: #ff69b4;
+  color: #006400;
+
+  border-top: 6px dotted #0000ff;
+  border-right: 11px double #ff0000;
+  border-bottom: 5px dashed #ffff00;
+  border-left: 9px groove #00ffff;
+
+  box-shadow:
+    6px 5px 0 #800080;
+
+  transition: all 0.08s;
+}
+
+/* ZEBRA STRIPING, BUT WRONG */
+
+tbody tr:nth-child(odd) td {
+  background: #00ff00;
+  color: #ff0000;
+  transform: rotate(-1deg);
+}
+
+tbody tr:nth-child(even) td {
+  background: #ff00ff;
+  color: #000080;
+  transform: rotate(1.5deg);
+}
+
+/* HOVERING SHOULD NOT HAVE BEEN INVENTED */
+
+tbody tr:hover td {
+  background: #ffff00 !important;
+  color: #ff0000 !important;
+
+  font-size: 25px;
+  font-weight: 900;
+
+  border: 10px outset #0000ff;
+
+  transform:
+    rotate(-4deg)
+    scale(1.08)
+    translateX(7px);
+
+  box-shadow:
+    13px 13px 0 #00ff00,
+    -8px -8px 0 #ff00ff;
+
+  text-shadow:
+    4px 4px #00ffff,
+    -4px -4px #000;
+}
+
+/* FIRST COLUMN: UNNECESSARILY AGGRESSIVE */
+
+td:first-child {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: Impact, fantasy;
+
+  background: #ff0000 !important;
+  color: #ffff00 !important;
+
+  border: 9px groove #00ff00;
+}
+
+/* LAST COLUMN: WHY */
+
+td:last-child {
+  font-family: Papyrus, fantasy;
+  font-size: 23px;
+
+  background: #00ffff !important;
+  color: #ff00ff !important;
+
+  border: 8px ridge #ff0000;
+}
+
+/* FOOTER OF DESPAIR */
+
+tfoot {
+  background: #800080;
+  color: #00ff00;
+}
+
+tfoot td {
+  background: #000 !important;
+  color: #00ff00 !important;
+
+  border: 7px double #ff00ff;
+
+  font-family: "Courier New", monospace;
+  font-weight: 900;
+
+  animation: footerPain 0.6s infinite alternate;
+}
+
+/* OPTIONAL: MAKE EVERY OTHER ROW SLIGHTLY MORE WRONG */
+
+tbody tr:nth-child(3n) {
+  filter: hue-rotate(90deg);
+}
+
+tbody tr:nth-child(4n) {
+  filter: saturate(500%);
+}
+
+/* RESPONSIVE DESIGN, TECHNICALLY */
+
+@media (max-width: 700px) {
+  table {
+    font-size: 13px;
+    border-spacing: 2px;
+    transform: rotate(2deg);
+  }
+
+  th {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  td {
+    padding: 7px;
+  }
+}
+
+@keyframes footerPain {
+  from {
+    transform: translateX(-4px) rotate(-1deg);
+  }
+
+  to {
+    transform: translateX(6px) rotate(2deg);
+  }
+}

@@ -1,0 +1,200 @@
+/* Minecraft Nausea / Distortion Effect */
+
+:root {
+    --mc-green: #55ff55;
+    --mc-dark: #111;
+    --mc-border: #555;
+}
+
+/* Overall page */
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+    background:
+        linear-gradient(135deg, #182018, #101010 50%, #182018);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Nausea distortion layer */
+body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    pointer-events: none;
+    z-index: 999;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(85, 255, 85, 0.04) 0px,
+            rgba(85, 255, 85, 0.04) 3px,
+            transparent 3px,
+            transparent 8px
+        );
+
+    animation: nausea 2.5s ease-in-out infinite;
+}
+
+/* Dark vignette around the edges */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+
+    background: radial-gradient(
+        ellipse at center,
+        transparent 45%,
+        rgba(0, 0, 0, 0.35) 75%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+
+    animation: vignette 3s ease-in-out infinite alternate;
+}
+
+/* Main content */
+.container {
+    width: min(1000px, 90%);
+    margin: 50px auto;
+    animation: floating 4s ease-in-out infinite;
+}
+
+/* Headers */
+h1, h2, h3 {
+    color: var(--mc-green);
+    text-shadow:
+        3px 3px 0 #111,
+        -1px -1px 0 #000;
+
+    animation: textWobble 2s ease-in-out infinite;
+}
+
+p{
+    margin:1em;
+}
+
+/* Minecraft-ish table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(20, 20, 20, 0.9);
+    box-shadow:
+        0 0 20px rgba(85, 255, 85, 0.2),
+        inset 0 0 30px rgba(0, 0, 0, 0.8);
+
+    animation: tableWobble 3s ease-in-out infinite;
+}
+
+th,
+td {
+    padding: 14px;
+    border: 2px solid var(--mc-border);
+    text-align: left;
+}
+
+th {
+    color: white;
+    background: #3b3b3b;
+    text-shadow: 2px 2px #000;
+}
+
+td {
+    background: rgba(30, 30, 30, 0.9);
+}
+
+/* Hover makes the table feel unstable */
+tr:hover {
+    background: rgba(85, 255, 85, 0.1);
+    transform: skewX(-1deg);
+}
+
+/* Minecraft nausea-style movement */
+@keyframes nausea {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: translate(2%, -1%) rotate(1deg) scale(1.04);
+    }
+
+    50% {
+        transform: translate(-2%, 2%) rotate(-1deg) scale(1.08);
+    }
+
+    75% {
+        transform: translate(1%, -2%) rotate(0.5deg) scale(1.04);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+}
+
+@keyframes vignette {
+    from {
+        opacity: 0.7;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(3px, -2px) rotate(0.2deg);
+    }
+
+    50% {
+        transform: translate(-3px, 3px) rotate(-0.2deg);
+    }
+
+    75% {
+        transform: translate(2px, 1px) rotate(0.15deg);
+    }
+}
+
+@keyframes tableWobble {
+    0%, 100% {
+        transform: perspective(800px) rotateY(0deg);
+    }
+
+    25% {
+        transform: perspective(800px) rotateY(1deg) rotateX(-0.5deg);
+    }
+
+    50% {
+        transform: perspective(800px) rotateY(-1deg) rotateX(0.5deg);
+    }
+
+    75% {
+        transform: perspective(800px) rotateY(0.5deg);
+    }
+}
+
+@keyframes textWobble {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(2px) skewX(-1deg);
+    }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+    }
+}

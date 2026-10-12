@@ -1,0 +1,686 @@
+/* ============================================================
+   ENTERPRISE UI SYSTEM v0.0.1
+   "Making the user experience worse, one component at a time."
+   ============================================================ */
+
+:root {
+  --blue: #003b7a;
+  --blue2: #0074c8;
+  --orange: #ff8c00;
+  --yellow: #ffd400;
+  --purple: #6a1b9a;
+  --green: #008f5a;
+  --red: #b71c1c;
+  --gray: #d1d5db;
+  --dark: #17202a;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  /* Nobody asked for this. */
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 59, 122, 0.08) 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      315deg,
+      rgba(255, 140, 0, 0.08) 25%,
+      transparent 25%
+    ),
+    #eeeeee;
+
+  color: #252525;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+header {
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue) 0%,
+      var(--blue2) 48%,
+      var(--purple) 48%,
+      var(--purple) 72%,
+      var(--orange) 72%
+    );
+
+  min-height: 145px;
+  padding: 32px 7%;
+
+  border-bottom:
+    12px solid
+    var(--yellow);
+
+  box-shadow:
+    0 8px 0 var(--dark),
+    0 14px 0 rgba(0, 0, 0, 0.15);
+
+  position: relative;
+}
+
+header::after {
+  content: "INTERNAL • CONFIDENTIAL • FY2026";
+  position: absolute;
+  right: 25px;
+  bottom: 12px;
+
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+h1 {
+  margin: 0;
+
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 1000;
+
+  color: white;
+
+  text-transform: uppercase;
+  letter-spacing: -0.08em;
+
+  text-shadow:
+    5px 5px 0 var(--dark),
+    10px 10px 0 var(--orange);
+
+  transform: skewX(-6deg);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+
+nav {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.3fr
+    0.8fr
+    1.6fr
+    0.9fr;
+
+  gap: 3px;
+
+  background: var(--dark);
+
+  border:
+    5px solid
+    var(--dark);
+
+  padding: 3px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 58px;
+
+  padding: 10px;
+
+  background: var(--blue);
+
+  color: white;
+
+  border:
+    3px solid
+    var(--yellow);
+
+  text-decoration: none;
+
+  font-size: 0.85rem;
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  box-shadow:
+    inset 0 -7px 0 rgba(0, 0, 0, 0.2);
+}
+
+nav a:nth-child(2) {
+  background: var(--purple);
+}
+
+nav a:nth-child(3) {
+  background: var(--orange);
+  color: #111;
+}
+
+nav a:nth-child(4) {
+  background: var(--green);
+}
+
+nav a:nth-child(5) {
+  background: #555;
+}
+
+nav a:hover {
+  background: var(--yellow);
+  color: #111;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 5px 0 #111;
+}
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+main {
+  width: min(1180px, 94%);
+  margin: 45px auto;
+}
+
+/* The unnecessary giant notification. */
+
+main::before {
+  content:
+    "⚠ IMPORTANT SYSTEM NOTICE: YOUR ATTENTION IS REQUIRED";
+
+  display: block;
+
+  padding: 18px 25px;
+  margin-bottom: 35px;
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      var(--yellow) 0 20px,
+      #111 20px 40px
+    );
+
+  color: #111;
+
+  border: 6px solid #111;
+
+  font-weight: 1000;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  box-shadow:
+    10px 10px 0 var(--orange);
+}
+
+/* ============================================================
+   HEADINGS
+   ============================================================ */
+
+h2 {
+  margin-top: 55px;
+
+  padding: 18px 22px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue) 0 75%,
+      var(--orange) 75%
+    );
+
+  color: white;
+
+  border:
+    5px solid
+    #111;
+
+  border-left:
+    18px solid
+    var(--yellow);
+
+  text-transform: uppercase;
+
+  font-size: 1.7rem;
+
+  letter-spacing: 0.04em;
+
+  box-shadow:
+    9px 9px 0 var(--purple);
+}
+
+h3 {
+  display: inline-block;
+
+  padding: 7px 18px;
+
+  color: white;
+  background: var(--purple);
+
+  border:
+    4px solid
+    #111;
+
+  transform: rotate(-1deg);
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.card {
+  background: white;
+
+  border:
+    5px solid
+    #111;
+
+  border-radius: 0;
+
+  padding: 30px;
+
+  margin:
+    35px 15px
+    35px 0;
+
+  min-height: 180px;
+
+  box-shadow:
+    12px 12px 0 var(--blue),
+    20px 20px 0 var(--orange);
+
+  position: relative;
+}
+
+.card:nth-child(even) {
+  border-color: var(--purple);
+
+  box-shadow:
+    -12px 12px 0 var(--orange),
+    -20px 20px 0 var(--blue);
+
+  transform: rotate(0.6deg);
+}
+
+.card::before {
+  content: "STANDARD";
+  position: absolute;
+
+  top: -17px;
+  right: 20px;
+
+  padding: 6px 12px;
+
+  background: var(--yellow);
+
+  border: 3px solid #111;
+
+  font-size: 10px;
+  font-weight: 1000;
+
+  letter-spacing: 0.15em;
+}
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  background: white;
+
+  border:
+    7px solid
+    #111;
+
+  box-shadow:
+    13px 13px 0 var(--purple);
+}
+
+thead th {
+  padding: 18px 12px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--purple)
+    );
+
+  color: white;
+
+  border:
+    3px solid
+    #111;
+
+  text-align: left;
+
+  text-transform: uppercase;
+
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+tbody td {
+  padding: 17px 12px;
+
+  border:
+    2px solid
+    #aaa;
+}
+
+tbody tr:nth-child(odd) {
+  background: #fff8d6;
+}
+
+tbody tr:nth-child(even) {
+  background: #e8f2ff;
+}
+
+tbody tr:hover {
+  background: #ffcf33;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+button,
+.button {
+  display: inline-block;
+
+  padding: 15px 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--blue2)
+    );
+
+  color: white;
+
+  border:
+    5px solid
+    #111;
+
+  border-radius: 0;
+
+  box-shadow:
+    7px 7px 0 #111;
+
+  font-size: 1rem;
+  font-weight: 1000;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  background: var(--orange);
+  color: #111;
+
+  transform:
+    translate(-3px, -3px)
+    rotate(-1deg);
+
+  box-shadow:
+    10px 10px 0 #111;
+}
+
+button:active,
+.button:active {
+  transform: translate(5px, 5px);
+
+  box-shadow:
+    2px 2px 0 #111;
+}
+
+/* ============================================================
+   FORMS
+   ============================================================ */
+
+label {
+  display: block;
+
+  margin:
+    25px 0 7px;
+
+  font-size: 0.8rem;
+
+  font-weight: 1000;
+
+  text-transform: uppercase;
+
+  color: var(--blue);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+
+  padding: 15px;
+
+  background: #fff;
+
+  color: #222;
+
+  border:
+    4px solid
+    #111;
+
+  border-radius: 0;
+
+  font: inherit;
+
+  box-shadow:
+    5px 5px 0 var(--gray);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline:
+    5px solid
+    var(--orange);
+
+  border-color:
+    var(--blue);
+
+  box-shadow:
+    8px 8px 0 var(--purple);
+}
+
+/* ============================================================
+   ALERTS
+   ============================================================ */
+
+.alert {
+  padding: 22px 25px;
+
+  margin: 30px 0;
+
+  border:
+    5px solid
+    #111;
+
+  font-weight: 900;
+
+  box-shadow:
+    8px 8px 0 #111;
+}
+
+.alert-warning {
+  background: var(--yellow);
+}
+
+.alert-danger {
+  background: #ffb3b3;
+  border-left:
+    18px solid
+    var(--red);
+}
+
+.alert-success {
+  background: #b9f3d0;
+  border-left:
+    18px solid
+    var(--green);
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+
+.progress {
+  height: 35px;
+
+  background: #ddd;
+
+  border:
+    5px solid
+    #111;
+
+  overflow: hidden;
+}
+
+.progress > div {
+  height: 100%;
+  width: 73%;
+
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      var(--blue) 0 15px,
+      var(--blue2) 15px 30px
+    );
+
+  border-right:
+    7px solid
+    #111;
+
+  position: relative;
+}
+
+.progress > div::after {
+  content: "73% COMPLETE";
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 1000;
+
+  text-shadow:
+    1px 1px #111;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  margin-top: 100px;
+
+  padding: 45px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--dark) 0 50%,
+      var(--purple) 50%
+    );
+
+  color: white;
+
+  border-top:
+    12px solid
+    var(--yellow);
+
+  text-align: center;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 0.08em;
+}
+
+footer strong {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--yellow);
+
+  font-size: 1.4rem;
+
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 25px 20px;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .card {
+    margin-right: 5px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
